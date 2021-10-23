@@ -25,7 +25,7 @@ async def bash(cmd):
 
 #_____________________ Fast Download / Fast Upload ____________________#
 
-async def uploader(file, name, taime, event, msg):
+async def progress_upload(file, name, taime, event, msg):
     with open(file, "rb") as f:
         result = await uploadable(
             client=event.client,
@@ -44,7 +44,7 @@ async def uploader(file, name, taime, event, msg):
     return result
 
 
-async def downloader(filename, file, event, taime, msg):
+async def progress_download(filename, file, event, taime, msg):
     with open(filename, "wb") as fk:
         result = await downloadable(
             client=event.client,
